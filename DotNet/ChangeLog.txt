@@ -1,0 +1,6 @@
+Release Notes
+
+eMandates.Merchant.Library 1.0.0
+
+Features
+#121317: Create eMandates .NET Core Software Library
