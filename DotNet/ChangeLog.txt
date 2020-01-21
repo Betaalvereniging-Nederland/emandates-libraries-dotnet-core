@@ -1,6 +1,4 @@
-Release Notes
+Release Notes eMandates.Merchant.Library
 
-eMandates.Merchant.Library 1.0.0
-
-Features
+v 1.0.0 (migration made using "emandates-libraries-dotnet" .Net Framework library v1.1.6 as a starting point)
 #121317: Create eMandates .NET Core Software Library
