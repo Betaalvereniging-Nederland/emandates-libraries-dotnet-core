@@ -1,0 +1,86 @@
+﻿@model eMandates.Merchant.Website.Models.DirectoryResponseViewModel
+@using eMandates.Merchant.Library.Configuration
+
+@{
+    ViewBag.Title = "Buy";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.instrumentation input[type=radio]').change(function () {
+            window.location = '/Products/Buy?id=' + '@ViewBag.Product.Id' + '&instrumentation=' + $('#Instrumentation:checked').val();
+        });
+    });
+</script>
+
+<h2>Buy</h2>
+
+<div>
+    <hr />
+
+    @if (Model.Source.IsError)
+    {
+        <div class="alert alert-danger" role="alert">
+            <div class="row">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                Error performing directory request: <br />
+
+                @if (!string.IsNullOrEmpty(Model.Source.Error.ErrorCode))
+                {
+                    <text>Code: @Model.Source.Error.ErrorCode<br /></text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Source.Error.ErrorMessage))
+                {
+                    <text>Message: @Model.Source.Error.ErrorMessage<br /></text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Source.Error.ErrorDetails))
+                {
+                    <text>Details: @Model.Source.Error.ErrorDetails<br /></text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Source.Error.ConsumerMessage))
+                {
+                    <text>Consumer message: @Model.Source.Error.ConsumerMessage<br /></text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Source.Error.SuggestedAction))
+                {
+                    <text>Code: @Model.Source.Error.SuggestedAction<br /></text>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        using (Html.BeginForm("Transaction", "Products", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            <div class="form-group">
+                <div class="col-xs-6">
+                    <h3>@ViewBag.Product.Name</h3>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <p class="help-block col-4">Select the issuing bank</p>
+                <div class="col-6" style="margin-bottom: 15px;">
+                    @Html.DropDownListFor(m => m.Source.DebtorBanks, new SelectList(Model.Source.DebtorBanks, "DebtorBankId", "DebtorBankName", "0", "DebtorBankCountry"), new { @class = "form-control", @name = "issuer" })
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary">Next</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-3 instrumentation">
+                    @Html.LabelFor(m => m.Instrumentation)
+                    @foreach (var o in Enum.GetValues(typeof(Instrumentation)).Cast<Instrumentation>())
+                    {
+                        <p>
+                            @Html.RadioButtonFor(m => m.Instrumentation, o.ToString())  @o.ToString()
+                        </p>
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>
+<!--<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>-->

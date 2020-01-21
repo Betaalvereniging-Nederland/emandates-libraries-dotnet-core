@@ -1,0 +1,91 @@
+﻿@model eMandates.Merchant.Website.Models.AmendmentRequestViewModel
+@using eMandates.Merchant.Library.Configuration
+
+@{
+    ViewBag.Title = "Amend";
+}
+
+<h2>Transaction</h2>
+
+<div>
+    <hr />
+    @using (Html.BeginForm("AmendMandateResult", "Products", FormMethod.Post, new { @class = "form-horizontal", @role = "form" }))
+    {
+        <div class="container">
+            <p class="help-block">Transaction information</p>
+            <div class="form-group row">
+                <div class="col-3">
+                    @Html.LabelFor(m => m.Source.EntranceCode)
+                    @Html.TextBoxFor(m => m.Source.EntranceCode, new { @class = "form-control" })
+                </div>
+                <div class="col-3">
+                    @Html.LabelFor(m => m.Source.ExpirationPeriod)
+                    @Html.TextBoxFor(m => m.Source.ExpirationPeriod, new { @class = "form-control" })
+                </div>
+                <div class="col-3">
+                    @Html.LabelFor(m => m.Source.Language)
+                    @Html.DropDownListFor(m => m.Source.Language, new SelectList(new[] { "en", "nl", "ro", "it" }, "en"), new { @class = "form-control" })
+                </div>
+            </div>
+            <hr />
+            <p class="help-block">eMandate information</p>
+            <div class="form-group row">
+                <div class="col-2">
+                    @Html.LabelFor(m => m.Source.DebtorBankId)
+                    @Html.TextBoxFor(m => m.Source.DebtorBankId, new { @class = "form-control" })
+                </div>
+                <div class="col-2">
+                    @Html.LabelFor(m => m.Source.DebtorReference)
+                    @Html.TextBoxFor(m => m.Source.DebtorReference, new { @class = "form-control" })
+                </div>
+                <div class="col-3">
+                    @Html.LabelFor(m => m.Source.EMandateId)
+                    @Html.TextBoxFor(m => m.Source.EMandateId, new { @class = "form-control" })
+                </div>
+                <div class="col-2">
+                    @Html.LabelFor(m => m.Source.MessageId)
+                    @Html.TextBoxFor(m => m.Source.MessageId, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    @Html.LabelFor(m => m.Source.SequenceType)
+                    @Html.DropDownListFor(m => m.Source.SequenceType, new SelectList(new[] { "OOFF", "RCUR" }), new { @class = "form-control" })
+                </div>
+                <div class="col-3">
+                    @Html.LabelFor(m => m.Source.EMandateReason)
+                    @Html.TextBoxFor(m => m.Source.EMandateReason, new { @class = "form-control" })
+                </div>
+                <div class="col-3">
+                    @Html.LabelFor(m => m.Source.PurchaseId)
+                    @Html.TextBoxFor(m => m.Source.PurchaseId, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    @Html.LabelFor(m => m.Source.OriginalIban)
+                    @Html.TextBoxFor(m => m.Source.OriginalIban, new { @class = "form-control" })
+                </div>
+                <div class="col-3">
+                    @Html.LabelFor(m => m.Source.OriginalDebtorBankId)
+                    @Html.TextBoxFor(m => m.Source.OriginalDebtorBankId, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    @Html.LabelFor(m => m.Instrumentation)
+                    @foreach (var o in Enum.GetValues(typeof(Instrumentation)).Cast<Instrumentation>())
+                    {
+                        <p>
+                            @Html.RadioButtonFor(m => m.Instrumentation, o.ToString())@o.ToString()
+                        </p>
+                    }
+                </div>
+            </div>
+            <hr />
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Send amendment request</button>
+        </div>
+    }
+</div>

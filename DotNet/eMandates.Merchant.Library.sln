@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eMandates.Merchant.Library", "eMandates.Merchant.Library\eMandates.Merchant.Library.csproj", "{E0D1DE63-3040-4395-A22A-C69740BB94DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eMandates.Merchant.Website", "eMandates.Merchant.Website\eMandates.Merchant.Website.csproj", "{F2C42606-415A-484B-8CFE-4629F8DC876C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72932432-BA8A-4398-BCA8-3C2CC71D9716}"
+	ProjectSection(SolutionItems) = preProject
+		ChangeLog.txt = ChangeLog.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0D1DE63-3040-4395-A22A-C69740BB94DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0D1DE63-3040-4395-A22A-C69740BB94DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0D1DE63-3040-4395-A22A-C69740BB94DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0D1DE63-3040-4395-A22A-C69740BB94DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2C42606-415A-484B-8CFE-4629F8DC876C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2C42606-415A-484B-8CFE-4629F8DC876C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2C42606-415A-484B-8CFE-4629F8DC876C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2C42606-415A-484B-8CFE-4629F8DC876C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9DAAB25-553F-4246-90D2-C37E2ACE3E4E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,93 @@
+﻿@model eMandates.Merchant.Library.StatusResponse
+@using eMandates.Merchant.Library
+
+@{
+    ViewBag.Title = "Status";
+}
+
+<h2>Result</h2>
+
+<div>
+    <hr />
+
+    @if (Model.IsError)
+    {
+        <div class="alert alert-danger" role="alert">
+            <div class="row">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                Error performing transaction request: <br />
+                @if (!string.IsNullOrEmpty(Model.Error.ErrorCode))
+                {
+                    <text>Code: @Model.Error.ErrorCode<br /></text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Error.ErrorMessage))
+                {
+                    <text>Message: @Model.Error.ErrorMessage<br /></text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Error.ErrorDetails))
+                {
+                    <text>Details: @Model.Error.ErrorDetails<br /></text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Error.ConsumerMessage))
+                {
+                    <text>Consumer message: @Model.Error.ConsumerMessage<br /></text>
+                }
+                @if (!string.IsNullOrEmpty(Model.Error.SuggestedAction))
+                {
+                    <text>Code: @Model.Error.SuggestedAction<br /></text>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="container">
+            <form role="form" class="form-horizontal">
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.LabelFor(m => m.TransactionId)
+                    </div>
+                    <div class="col-4">
+                        @Html.LabelFor(m => m.StatusDateTimestamp)
+                    </div>
+                    <div class="col-4">
+                        @Html.LabelFor(m => m.Status)
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.DisplayTextFor(m => m.TransactionId)
+                    </div>
+                    <div class="col-4">
+                        @Html.DisplayTextFor(m => m.StatusDateTimestamp)
+                    </div>
+                    <div class="col-4">
+                        @Html.DisplayTextFor(m => m.Status)
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        if (Model.Status.Equals(StatusResponse.Success))
+        {
+            <div class="container">
+                <form role="form" class="form-horizontal">
+                    <div class="form-group">
+                        @Html.TextArea("acc", Model.AcceptanceReport.RawMessage, 15, 20, new { @class = "form-control", @readonly = "true" })
+                    </div>
+                </form>
+                    
+                @Html.ActionLink("Create amendment request", "Amend")
+                <text> | </text>
+                @Html.ActionLink("Create cancellation request", "Cancel")
+                <br/>
+            </div>
+        }
+    }
+</div>
+<span>
+    <br />
+</span>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

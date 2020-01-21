@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="eMandates.Merchant.Library.CoreCommunicator" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.75" Width="3.75" />
+    <Members>
+      <Property Name="LocalInstrumentCode" Hidden="true" />
+      <Property Name="Logger" Hidden="true" />
+      <Method Name="PerformRequest" Hidden="true" />
+      <Method Name="Sign" Hidden="true" />
+      <Method Name="VerifySchema" Hidden="true" />
+      <Method Name="VerifySignature" Hidden="true" />
+      <Property Name="XmlProcessor" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAQQBAAABIAABAAAAAAAAAEAACAAAAAAAAAAEAACAE=</HashCode>
+      <FileName>Communicator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.DirectoryResponse">
+    <Position X="0.5" Y="10.25" Width="3.5" />
+    <Members>
+      <Method Name="DirectoryResponse" Hidden="true" />
+      <Method Name="Get" Hidden="true" />
+      <Method Name="Parse" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAEQBAAAAIAAIAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DirectoryResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.ErrorResponse">
+    <Position X="5.25" Y="17.5" Width="3.5" />
+    <Members>
+      <Method Name="ErrorResponse" Hidden="true" />
+      <Method Name="Get" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAQAAAAAAJAAAAAAAAAAAiAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ErrorResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.NewMandateRequest">
+    <Position X="0.5" Y="13" Width="3.75" />
+    <Members>
+      <Method Name="NewMandateRequest" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAADAAAAAAAAAAAAAIIBAABAAAEAAoAAAIAAAA=</HashCode>
+      <FileName>NewMandateRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.NewMandateResponse">
+    <Position X="5.25" Y="13" Width="3.5" />
+    <Members>
+      <Method Name="Get" Hidden="true" />
+      <Method Name="NewMandateResponse" Hidden="true" />
+      <Method Name="Parse" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgEAAAAAAAESBAACAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NewMandateResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.StatusRequest">
+    <Position X="0.5" Y="20.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StatusRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.StatusResponse">
+    <Position X="5.25" Y="20.25" Width="4.25" />
+    <Members>
+      <Field Name="Cancelled" Hidden="true" />
+      <Field Name="Expired" Hidden="true" />
+      <Field Name="Failure" Hidden="true" />
+      <Method Name="Get" Hidden="true" />
+      <Field Name="Open" Hidden="true" />
+      <Method Name="Parse" Hidden="true" />
+      <Field Name="Pending" Hidden="true" />
+      <Method Name="StatusResponse" Hidden="true" />
+      <Field Name="Success" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAEACAAMQBAACAAAAAAAgABAACBQAAIIAAAAAA=</HashCode>
+      <FileName>StatusResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.DebtorBank">
+    <Position X="5.25" Y="10.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAACAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>DirectoryResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.AmendmentRequest">
+    <Position X="0.5" Y="29.5" Width="3.75" />
+    <Members>
+      <Method Name="AmendmentRequest" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgDAAAAAAAAAAAAAIMBAABAAAEAAoAgAIAAAA=</HashCode>
+      <FileName>AmendmentRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.AmendmentResponse">
+    <Position X="5.25" Y="29.5" Width="3.75" />
+    <Members>
+      <Method Name="AmendmentResponse" Hidden="true" />
+      <Method Name="Get" Hidden="true" />
+      <Method Name="Parse" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgEAAAAAAAESBAACAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AmendmentResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.CancellationRequest">
+    <Position X="0.5" Y="34" Width="3.75" />
+    <Members>
+      <Method Name="CancellationRequest" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgDAAAAAAAAAAAAAIIBAABAAAEAAoAAAIAAAA=</HashCode>
+      <FileName>CancellationRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.CancellationResponse">
+    <Position X="5.25" Y="34" Width="3.75" />
+    <Members>
+      <Method Name="CancellationResponse" Hidden="true" />
+      <Method Name="Get" Hidden="true" />
+      <Method Name="Parse" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgEAAAAAAAESBAACAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CancellationResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.AcceptanceReport">
+    <Position X="5.25" Y="23" Width="3.5" />
+    <Members>
+      <Method Name="AcceptanceReport" Hidden="true" />
+      <Method Name="Parse" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACgAAAACBABAAAAACAoCAIABAAABAQEACYCsAIAQAA=</HashCode>
+      <FileName>AcceptanceReport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="eMandates.Merchant.Library.B2BCommunicator">
+    <Position X="4.75" Y="3.25" Width="4" />
+    <Members>
+      <Method Name="B2BCommunicator" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Communicator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.296" />
+  </Class>
+  <Interface Name="eMandates.Merchant.Library.ICoreCommunicator">
+    <Position X="0.5" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAEAACAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>ICommunicator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eMandates.Merchant.Library.Configuration.IConfiguration">
+    <Position X="0.5" Y="5.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AABABAAAAFAAAAAAAAAAAAgAQEQEQAAAAAQEIAAIAAA=</HashCode>
+      <FileName>Configuration\IConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eMandates.Merchant.Library.IB2BCommunicator">
+    <Position X="4.75" Y="0.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICommunicator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eMandates.Merchant.Library.Configuration.ILogger">
+    <Position X="5.25" Y="7.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ILogger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="eMandates.Merchant.Library.Configuration.ILoggerFactory">
+    <Position X="5.25" Y="5.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Configuration\ILoggerFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="eMandates.Merchant.Library.SequenceType">
+    <Position X="5.25" Y="15.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>SequenceType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
