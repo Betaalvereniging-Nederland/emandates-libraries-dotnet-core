@@ -3,7 +3,6 @@ using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
 using System.Xml;
-using System.Text;
 
 namespace eMandates.Merchant.Library.XML.Utils
 {

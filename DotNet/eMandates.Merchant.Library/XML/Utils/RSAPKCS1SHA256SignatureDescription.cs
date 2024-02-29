@@ -82,7 +82,7 @@ namespace eMandates.Merchant.Library.XML.Utils
         /// </summary>
         public RSAPKCS1SHA256SignatureDescription()
         {
-            KeyAlgorithm = typeof(RSA).AssemblyQualifiedName;
+            KeyAlgorithm = typeof(RSA).FullName;
             DigestAlgorithm = typeof(SHA256Managed).FullName;   // Note - SHA256CryptoServiceProvider is not registered with CryptoConfig
             FormatterAlgorithm = typeof(RSAPKCS1SignatureFormatter).FullName;
             DeformatterAlgorithm = typeof(RSAPKCS1SignatureDeformatter).FullName;

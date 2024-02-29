@@ -1,6 +1,5 @@
 ﻿using System;
 using eMandates.Merchant.Library.XML.Schemas.iDx;
-using eMandates.Merchant.Library.XML.Schemas.pain012;
 using eMandates.Merchant.Library.Configuration;
 
 namespace eMandates.Merchant.Library

@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Xml;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace eMandates.Merchant.Library.XML.Utils
 {
     internal class PrefixedSignedXml : SignedXml
     {
+        public const string XmlDigSignRSASHA256Namespace = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
         private string prefixNs;
 
         public PrefixedSignedXml(string prefix, XmlDocument document)
@@ -69,7 +66,14 @@ namespace eMandates.Merchant.Library.XML.Utils
                 CryptoConfig.CreateFromName(this.SignedInfo.SignatureMethod) as SignatureDescription;
             if (description == null)
             {
-                throw new CryptographicException("Cryptography_Xml_SignatureDescriptionNotCreated");
+                if (this.SignedInfo.SignatureMethod == XmlDigSignRSASHA256Namespace)
+                {
+                    description = new RSAPKCS1SHA256SignatureDescription();
+                }
+                else
+                {
+                    throw new CryptographicException("Cryptography_Xml_SignatureDescriptionNotCreated");
+                }
             }
             HashAlgorithm hash = description.CreateDigest();
             if (hash == null)
