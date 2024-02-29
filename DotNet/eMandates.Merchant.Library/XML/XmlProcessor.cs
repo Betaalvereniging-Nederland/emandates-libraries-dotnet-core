@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
 using System.Xml;
@@ -62,10 +61,6 @@ namespace eMandates.Merchant.Library.XML
             }
 
             SchemaSet.Compile();
-
-            // this prevents an exception: SignatureDescription could not be created for the signature algorithm supplied.
-            // Apparently System.Security.Cryptography.Xml.SignedXml can't deal with SHA256 by default
-            CryptoConfig.AddAlgorithm(typeof(RSAPKCS1SHA256SignatureDescription), "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256");
         }
 
         public XmlProcessor(IConfiguration configuration)

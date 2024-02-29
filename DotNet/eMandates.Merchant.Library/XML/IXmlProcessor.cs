@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace eMandates.Merchant.Library.XML
+﻿namespace eMandates.Merchant.Library.XML
 {
     /// <summary>
     /// IXmlProcessor interface: utility methods on XML files

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using eMandates.Merchant.Library.Configuration;
 
 namespace eMandates.Merchant.Library

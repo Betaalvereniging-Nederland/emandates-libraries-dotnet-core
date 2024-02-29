@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Xml;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace eMandates.Merchant.Library.XML.Utils
@@ -16,7 +12,6 @@ namespace eMandates.Merchant.Library.XML.Utils
         public const string XmlDigSignRSASHA256Namespace = "http://www.w3.org/2001/04/xmldsig-more#rsa-sha256";
         public static void RegisterSignatureAlghorighm()
         {
-            CryptoConfig.AddAlgorithm(typeof(RSAPKCS1SHA256SignatureDescription), XmlDigSignRSASHA256Namespace);
         }
 
         /// <summary>

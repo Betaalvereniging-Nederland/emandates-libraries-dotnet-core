@@ -1,4 +1,8 @@
 Release Notes eMandates.Merchant.Library
 
+v 1.1.0 
+#144573: Adapt Signature Algorithms for .NET 8 Compatibility
+#143749: Adapt csproj for NuGet Publishing
+
 v 1.0.0 (migration made using "emandates-libraries-dotnet" .Net Framework library v1.1.6 as a starting point)
 #121317: Create eMandates .NET Core Software Library

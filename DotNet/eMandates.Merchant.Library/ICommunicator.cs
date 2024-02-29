@@ -1,5 +1,4 @@
-﻿using eMandates.Merchant.Library.Configuration;
-
+﻿
 namespace eMandates.Merchant.Library
 {
     /// <summary>

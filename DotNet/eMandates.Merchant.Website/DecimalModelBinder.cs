@@ -1,48 +1,49 @@
 ﻿using System;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Globalization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace eMandates.Merchant.Website
 {
-    internal class DecimalModelBinder : JsonConverter
+    internal class DecimalModelBinder : JsonConverter<decimal?>
     {
-        public override bool CanRead => true;
-        public override bool CanWrite => false;
-
-        public override bool CanConvert(Type objectType) => objectType == typeof(decimal);
-
-        public override object ReadJson(JsonReader reader, Type objectType,
-            object existingValue, JsonSerializer serializer)
+        public override decimal? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            JToken token = JToken.Load(reader);
-            if (token.Type == JTokenType.Float || token.Type == JTokenType.Integer)
-            {
-                return token.ToObject<decimal>();
-            }
-
-            if (token.Type == JTokenType.String)
-            {
-                var val = token.ToString();
-                val = val.Replace(",", CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator);
-                val = val.Replace(".", CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator);
-
-                return Decimal.Parse(val);
-            }
-
-            if (token.Type == JTokenType.Null && objectType == typeof(decimal?))
+            if (reader.TokenType == JsonTokenType.Null)
             {
                 return null;
             }
 
-            throw new JsonSerializationException("Unexpected token type: " +
-                                                 token.Type.ToString());
+            if (reader.TokenType == JsonTokenType.Number)
+            {
+                return reader.GetDecimal();
+            }
+
+            if (reader.TokenType == JsonTokenType.String)
+            {
+                string value = reader.GetString();
+                value = value.Replace(",", CultureInfo.InvariantCulture.NumberFormat.CurrencyDecimalSeparator);
+                value = value.Replace(".", CultureInfo.InvariantCulture.NumberFormat.CurrencyDecimalSeparator);
+
+                if (decimal.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal result))
+                {
+                    return result;
+                }
+            }
+
+            throw new JsonException("Unrecognized JSON token when parsing decimal.");
         }
 
-        public override void WriteJson(JsonWriter writer, object value,
-            JsonSerializer serializer)
+        public override void Write(Utf8JsonWriter writer, decimal? value, JsonSerializerOptions options)
         {
-            throw new NotImplementedException();
+            if (value.HasValue)
+            {
+                writer.WriteNumberValue(value.Value);
+            }
+            else
+            {
+                writer.WriteNullValue();
+            }
         }
     }
 }
